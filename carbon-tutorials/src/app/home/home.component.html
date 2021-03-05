@@ -1,1 +1,22 @@
-<p>home works!</p>
+<section class="cdst--main-wrapper">
+    <div class="text-align-center cdst--padding-1">
+        <h2>List of tutorials</h2>
+    </div>
+    <section class="cdst--main-list-wrapper cdst--margin-auto">
+        <div class="cdst--main-list">
+            <ng-container *ngIf="!!someList.length; else noItemsTemplate">
+                <ng-container *ngFor="let item of someList">
+                    <ng-container *ngIf="item.show;">
+                        <ibm-clickable-tile (click)="handleTileClick($event);">
+                            {{ item.name }}
+                        </ibm-clickable-tile>
+                    </ng-container>
+                </ng-container>
+            </ng-container>
+        </div>
+    </section>
+</section>
+
+<ng-template #noItemsTemplate let-data="data">
+    <h3>{{ data }}</h3>
+</ng-template>

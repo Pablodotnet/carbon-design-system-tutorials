@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MockList } from './MockList';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  someList: { name: string, show: boolean }[] = MockList;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  handleTileClick($event: any) {
+    console.log('$event: ', $event);
   }
 
 }

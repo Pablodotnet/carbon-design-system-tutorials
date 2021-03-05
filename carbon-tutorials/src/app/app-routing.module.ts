@@ -6,8 +6,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: '**', redirectTo: '' }
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'tables',
+    loadChildren: () => import('./tables-tutorial/cdst-table.module').then(module => module.CdstTableModule)
+  },
+  {
+    path: '**',
+    redirectTo: ''
+  }
 ];
 
 @NgModule({

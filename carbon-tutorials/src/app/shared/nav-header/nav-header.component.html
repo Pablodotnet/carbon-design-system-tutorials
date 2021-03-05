@@ -1,0 +1,19 @@
+<ibm-header [brand]="brandTemplate" name="Carbon Sessions">
+    <ibm-header-navigation>
+        <ibm-header-item [route]="['home']">Home</ibm-header-item>
+        <ibm-header-menu title="Tutorials">
+            <ng-container *ngFor="let page of pagesList">
+                <ibm-header-item [route]="page.url">{{ page.name }}</ibm-header-item>
+            </ng-container>
+        </ibm-header-menu>
+    </ibm-header-navigation>
+</ibm-header>
+
+<ng-template #brandTemplate>
+    <a class="bx--header__name">
+        <span class="bx--header__name--prefix cdst--margin-right-1">
+            Pablodotjs
+        </span>
+        Carbon Sessions
+    </a>
+</ng-template>

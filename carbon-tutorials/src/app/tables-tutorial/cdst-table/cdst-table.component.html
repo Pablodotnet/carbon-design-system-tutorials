@@ -1,0 +1,25 @@
+<section class="cdst--padding-1">
+    <section class="cdst-tables--header">
+        <h2>Tables Tutorial</h2>
+        <p>
+            This is a simple table filled dynamically, you can find the official docs 
+            <a [href]="tablesDocsUrl" target="__blank">here</a>
+        </p>
+    </section>
+    <section class="cdst-tables--content">
+        <ibm-table-container>
+          <ibm-table-header>
+              <h4 ibmTableHeaderTitle>Simple Table</h4>
+          </ibm-table-header>
+          <ibm-table
+              [model]="cdstTableModel"
+              [skeleton]="isLoadingResources"
+              [showSelectionColumn]="false"
+              [sortable]="false">
+                <div class="cdst--padding-1">
+                    No data loaded.
+                </div>
+          </ibm-table>
+        </ibm-table-container>
+    </section>
+</section>
